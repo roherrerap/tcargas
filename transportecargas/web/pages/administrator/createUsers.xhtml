@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+        <!--content start-->
+        <ui:composition template="../templates/admin-temp.xhtml">
+            <ui:define name="content">
+                <br/>
+                <div class="registration-bg">
+                    <div class="container">
+                        <h:form class="form-signin wow fadeInUp">
+                            <h2 class="form-signin-heading">Crear Usuario</h2>
+                            <div class="login-wrap">
+                                <h:panelGrid columns="2">
+                                    <label>Documento Identificación:</label>
+                                    <h:inputText value="#{createUsersBean.idUser}" required="true" requiredMessage="¡El documento es requerido!"/>
+                                    <label>Nombre(s):</label>
+                                    <h:inputText value="#{createUsersBean.firstnameUser}" required="true" requiredMessage="¡El nombre(s) es requerido!"/>
+                                    <label>Apellidos(s):</label>
+                                    <h:inputText value="#{createUsersBean.lastnameUser}" required="true" requiredMessage="¡El apellido(s) es requerido!"/>
+                                    <label>Nombre usuario:</label>
+                                    <h:inputText value="#{createUsersBean.usernameUser}" required="true" requiredMessage="¡El nombre de usuario es requerido!"/>
+                                    <label>Contraseña:</label>
+                                    <h:inputSecret value="#{createUsersBean.passwordUser}" required="true" requiredMessage="¡La contraseña es requerida!"/>
+                                    <label>Email:</label>
+                                    <h:inputText value="#{createUsersBean.emailUser}" required="true" requiredMessage="¡El email es requerido!"/>
+                                    <label>Teléfono:</label>
+                                    <h:inputText value="#{createUsersBean.telephoneUser}" required="true" requiredMessage="¡El teléfono es requerido!"/>
+                                    <label>Dirección:</label>
+                                    <h:inputText value="#{createUsersBean.addressUser}" required="true" requiredMessage="¡La dirección es requerida!"/>
+                                    <label>Fecha de Nacimiento (dd/mm/yyyy):</label>
+                                    <h:inputText value="#{createUsersBean.birthdateUser}" required="true" requiredMessage="¡La fecha de nacimiento es requerida!"/>
+                                    <label>Tipo de usuario(1 o 2):</label>
+                                    <h:inputText value="#{createUsersBean.typeUseridtypeuser}" required="true" requiredMessage="¡El tipo de usuario es requerido!"/>
+                                </h:panelGrid>
+                                <br/>
+                                <h:commandButton class="btn btn-ln btn-login btn-block" action="#{createUsersBean.createUsers()}" value="Crear"/>
+                                <h:outputText value="#{createUsersBean.response}"/>
+                                <br/>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <!--content end-->
+    </h:body>
+</html>

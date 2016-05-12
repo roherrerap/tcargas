@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <!--content start-->
+        <ui:composition template="../templates/operator-temp.xhtml">
+            <ui:define name="content">
+                <br/>
+                <div class="registration-bg">
+                    <div class="container">
+                        <h:form class="form-signin wow fadeInUp">
+                            <h2 class="form-signin-heading">Crear Horario Vehículo</h2>
+                            <div class="login-wrap">
+                                <h:panelGrid columns="2">
+                                    <label>Placa del vehiculo:</label>
+                                    <h:inputText value="#{createScheduleBean.vehicleID}" required="true" requiredMessage="¡La placa del vehículo es requerido!"/>
+                                    <label>Viaje a asignar:</label>
+                                    <h:inputText value="#{createScheduleBean.travel}" required="true" requiredMessage="¡El nombre del viaje es requerido!"/>
+                                    <label>Fecha del viaje inicio (dd/mm/yyyy):</label>
+                                    <h:inputText value="#{createScheduleBean.timeAssigned}" required="true" requiredMessage="¡La fecha del viaje de inicio es requerida!"/>
+                                    <label>Fecha del viaje final (dd/mm/yyyy):</label>
+                                    <h:inputText value="#{createScheduleBean.timefinalAssigned}" required="true" requiredMessage="¡La fecha del viaje de final es requerida!"/>
+                                    <h:inputHidden value="#{sessionScope.user.idUser}" a:name="iduser"/>
+                                </h:panelGrid>
+                                <br/>
+                                <h:commandButton action="#{createScheduleBean.createSchedule()}" value="Crear"/>
+                                <br/>
+                                <br/>
+                                <label>Mensaje: </label>
+                                <h:outputText value="#{createScheduleBean.message}"/>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <!--content end-->
+    </h:body>
+</html>

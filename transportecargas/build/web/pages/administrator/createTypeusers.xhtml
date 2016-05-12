@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <!--content start-->
+        <ui:composition template="../templates/admin-temp.xhtml">
+            <ui:define name="content">
+                <br/>
+                <div class="registration-bg">
+                    <div class="container">
+                        <h:form class="form-signin wow fadeInUp">
+                            <h2 class="form-signin-heading">Crear Tipo Usuario</h2>
+                            <div class="login-wrap">
+                                <h:panelGrid columns="2">
+                                    <label>Nombre:</label>
+                                    <h:inputText value="#{createTypeusersBean.nameTypeuser}" required="true" requiredMessage="¡El nombre(s) es requerido!"/>
+                                    <label>Descripción:</label>
+                                    <h:inputText value="#{createTypeusersBean.descriptionTypeuser}" required="true" requiredMessage="¡La descripción es requerida!"/>
+                                </h:panelGrid>
+                                <br/>
+                                <h:commandButton class="btn btn-ln btn-login btn-block" action="#{createTypeusersBean.createTypeusers()}" value="Crear"/>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <!--content end-->
+    </h:body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:body>
+        <!--content start-->
+        <ui:composition template="../templates/admin-temp.xhtml">
+            <ui:define name="content">
+                <br/>
+                <div class="registration-bg">
+                    <div class="container">
+                        <h:form class="form-signin wow fadeInUp">
+                            <h2 class="form-signin-heading">Crear Vehículo</h2>
+                            <div class="login-wrap">
+                                <h:panelGrid columns="2">
+                                    <label>Placa:</label>
+                                    <h:inputText value="#{createVehiclesBean.idVehicle}" required="true" requiredMessage="¡La placa es requerido!"/>
+                                    <label>Color Vehículo:</label>
+                                    <h:inputText value="#{createVehiclesBean.colorVehicle}" required="true" requiredMessage="¡El color es requerido!"/>
+                                    <label>Modelo(año):</label>
+                                    <h:inputText value="#{createVehiclesBean.modelyearVehicle}" required="true" requiredMessage="¡El modelo es requerido!"/>
+                                    <label>Tipo de Vehículo:</label>
+                                    <h:inputText value="#{createVehiclesBean.typeVehicle}" required="true" requiredMessage="¡El tipo es requerido!"/>
+                                    <label>Marca Vehículo:</label>
+                                    <h:inputText value="#{createVehiclesBean.brandVehicle}" required="true" requiredMessage="¡La marca es requerido!"/>
+                                </h:panelGrid>
+                                <br/>
+                                <h:commandButton class="btn btn-ln btn-login btn-block" action="#{createVehiclesBean.createVehicles()}" value="Crear"/>
+                                <h:outputText value="#{createVehiclesBean.response}"/>
+                                <br/>
+                            </div>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <!--content end-->
+    </h:body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <!--content start-->
+        <ui:composition template="../templates/admin-temp.xhtml">
+            <ui:define name="header">
+                <h1 align="center">Administrador - Resultado búsqueda Usuario</h1>
+            </ui:define>
+            <ui:define name="content">
+                <div class="container" id="tourpackages-carousel">
+                    <div class="row">
+                        <div class="profile">
+                            <ui:repeat value="#{createUsersBean.searchListHandleUsers}" var="item">
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="thumbnail wow fadeInUp" data-wow-delay=".1s">
+                                        <div class="caption">
+                                            <h4>Id Usuario:</h4>
+                                            <p><h:outputText value=" #{item.idUser}" /></p>
+                                            <h4>Nombre(s)</h4>
+                                            <p><h:outputText value=" #{item.firstnameUser}"/></p>
+                                            <h4>Apellido(s):</h4>
+                                            <p><h:outputText value=" #{item.lastnameUser}"/></p>
+                                            <h4>E-mail:</h4>
+                                            <p><h:outputText value=" #{item.emailUser}"/></p>
+                                            <h4>Teléfono:</h4>
+                                            <p><h:outputText value=" #{item.telephoneUser}"/></p>
+                                            <h4>Dirección:</h4>
+                                            <p><h:outputText value=" #{item.addressUser}"/></p>
+                                            <h4>Fecha de Nacimiento:</h4>
+                                            <p><h:outputText value=" #{item.birthdateUser}"/></p>
+                                            <h:form>
+                                                <h:commandButton class="btn btn-sm btn-warning" value="Editar" action="#{createUsersBean.updateUsers()}">
+                                                    <f:param name="iduser" value="#{item.idUser}"/>
+                                                </h:commandButton>
+                                                <span  style="padding-left:4px;">
+                                                    <h:commandButton class="btn btn-sm btn-danger" value="Borrar" action="#{createUsersBean.deleteUsers()}">
+                                                        <f:param name="iduser" value="#{item.idUser}"/>
+                                                    </h:commandButton>
+                                                </span>
+                                                <span  style="padding-left:4px;">
+                                                    <h:commandButton class="btn btn-sm btn-danger" value="Habilitar" action="#{createUsersBean.enableUsers()}">
+                                                        <f:param name="iduser" value="#{item.idUser}"/>
+                                                    </h:commandButton>
+                                                </span>
+                                            </h:form> 
+                                        </div>
+                                    </div>
+                                </div>
+                            </ui:repeat>
+                        </div>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+        <!--content end-->
+    </h:body>
+</html>
