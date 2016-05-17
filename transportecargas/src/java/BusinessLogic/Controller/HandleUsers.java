@@ -111,5 +111,5 @@ public class HandleUsers {
         obusers = usersDAO.searchByIdUser(iduser);
         return obusers;
     }
-    
+
 }

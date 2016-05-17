@@ -7,10 +7,8 @@ package BusinessLogic.Service;
 
 import javax.jws.WebService;
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import java.util.List;
 import BusinessLogic.Controller.ROB;
-import BusinessLogic.Controller.MakeSchedule;
+import BusinessLogic.Controller.ServiceSchedule;
 
 /**
  *
@@ -23,7 +21,7 @@ public class CheckScheduleWS {
     @WebMethod(operationName = "checkSchedule")
     public ROB checkSchedule(String idscheduleusername, String password, String idschedule) {
         //Instancia un objeto de la clase encargada de realizar las transacciones 
-        MakeSchedule checkSchedule = new MakeSchedule();
+        ServiceSchedule checkSchedule = new ServiceSchedule();
     	//Se llama a la función que realiza la transacción y se le enían los parámetros que necesita 
         //para realizarla, los cuales vienen de la aplicacion que consume el servicio 
         return checkSchedule.check(idscheduleusername, password, idschedule);

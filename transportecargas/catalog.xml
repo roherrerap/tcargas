@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://192.168.0.13:9120/FabRutaESBService/FabRutaESBPort?wsdl" uri="src/conf/xml-resources/web-service-references/FabRutaESBPort/wsdl/192.168.0.13_9120/FabRutaESBService/FabRutaESBPort.wsdl"/>
+    <system systemId="http://192.168.0.10:80/transportecargas/CheckScheduleWS?xsd=1" uri="src/conf/xml-resources/web-service-references/FabRutaESBPort/wsdl/192.168.0.10_80/transportecargas/CheckScheduleWS.xsd_1.xsd"/>
+</catalog>

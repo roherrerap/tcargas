@@ -4,8 +4,6 @@
  */
 package BusinessLogic.Controller;
 
-import java.util.List;
-
 /**
  *
  * @author Grupo 6 - Transportes de Carga
@@ -14,17 +12,7 @@ public class ROB {
  
     private boolean success;
     private String err_message;
-    private Long data;
-    private Integer dataint;
-    private List information;
-
-    public List getInformation() {
-        return information;
-    }
-
-    public void setInformation(List information) {
-        this.information = information;
-    }
+    private String data;
 
     public boolean isSuccess() {
         return success;
@@ -42,20 +30,11 @@ public class ROB {
         this.err_message = err_message;
     }
 
-    public Long getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Long data) {
+    public void setData(String data) {
         this.data = data;
     }
-
-    public Integer getDataint() {
-        return dataint;
-    }
-
-    public void setDataint(Integer dataint) {
-        this.dataint = dataint;
-    }
-    
 }

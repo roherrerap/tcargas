@@ -9,7 +9,7 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import BusinessLogic.Controller.ROB;
-import BusinessLogic.Controller.MakeSchedule;
+import BusinessLogic.Controller.ServiceSchedule;
 import java.text.ParseException;
 
 /**
@@ -25,7 +25,7 @@ public class MakeScheduleWS {
     @WebMethod(operationName = "makeSchedule")
     public ROB makeSchedule(String username, String password, String datefinal, String description) throws ParseException {
         //Instancia un objeto de la clase encargada de realizar las transacciones 
-        MakeSchedule makeSchedule = new MakeSchedule();
+        ServiceSchedule makeSchedule = new ServiceSchedule();
     	//Se llama a la función que realiza la transacción y se le enían los parámetros que necesita 
         //para realizarla, los cuales vienen de la aplicacion que consume el servicio 
         return makeSchedule.make(username, password, datefinal, description);
