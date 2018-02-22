@@ -1,3 +1,3 @@
 # tcargas
 
-<kbd>Ctrl</kbd>+<kbd>C</kbd>
+<kbd>Richard</kbd>+<kbd>C</kbd>
